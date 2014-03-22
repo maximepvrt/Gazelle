@@ -20,10 +20,10 @@ window.Readily = window.Readily || {};
 		});
 	}
 	
-	
-	mkRoute("welcome", "#welcome");
-	mkRoute("", "#welcome");
-	mkRoute("selection", "#selection");
+	mkRoute("", "#home");
+	mkRoute("home", "#home");
+	mkRoute("login", "#login");
+	mkRoute("single", "#single");
 		
 	//setup crossroads
 	crossroads.addRoute('foo');

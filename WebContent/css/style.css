@@ -1,0 +1,24 @@
+body { padding-top: 70px;}
+
+.navbar-default {
+background-color: #2e3e4f;
+border-color: #374a5d;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+.navbar-brand img {
+	margin: -25px;
+}
+
+.navbar-toggle {
+position: relative;
+float: left;
+margin-left: 15px;
+margin-right: 10px;
+}
+
+#sidebar-wrapper {
+background: #edf0f1;
+border-right:1px solid #818b8d;
+}
