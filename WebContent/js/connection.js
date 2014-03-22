@@ -3,7 +3,8 @@ window.Readily = window.Readily || {};
 (function(Readily){
 	
 	function Callback(status, param) {
-		
+		this.status = status;
+		this.param = param;
 	}
 	
 	function httpCallback(verb, url, param, callback) {
