@@ -11,7 +11,6 @@ window.Readily = window.Readily || {};
 	
 	function httpCallback(verb, url, param, callback) {
 		$.ajax({
-            async: false,
             dataType: "json",
             url: base,
             success: function(data) {

@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
+encoding//WebContent/login_tmpl.html=UTF-8
+encoding//WebContent/signup_tmpl.html=UTF-8
 encoding/<project>=UTF-8
