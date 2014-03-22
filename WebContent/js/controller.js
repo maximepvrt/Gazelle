@@ -6,7 +6,7 @@ window.Readily = window.Readily || {};
 		$el.find("a").each(function(i) {
 			var self = $(this);
 			var nav = self.attr("href");
-			if (nav.substr(0,1) == '#') {
+			if (nav && nav.substr(0,1) == '#') {
 				nav = nav.substr(1);
 			}
 			if (nav) {
