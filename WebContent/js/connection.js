@@ -9,10 +9,32 @@ window.Readily = window.Readily || {};
 		this.data = data;
 	}
 	
-	function httpCallback(verb, url, param, callback) {
+	function httpCall(verb, url, param, callback) {
+		var params = {
+				dataType: "json",
+				verb: verb,
+	            url: base + url,
+	            data: param,
+	            success: function(data) {
+	            	if (data.status == "OK")
+	            		callback(new Callback("OK",data));
+					else
+						callback(new Callback("KO",data));
+	            },
+	            error: function(data) {
+	            	 callback = new Callback("KO",data);
+	            }				
+		};
+		$.ajax(params);
+		return;
+		
 		$.ajax({
-            dataType: "json",
-            url: base,
+            type: verb,
+			dataType: "json",
+            url: base + url,
+            data: param,
+            timeout: 1000,
+            async: true,
             success: function(data) {
             	if (data.status == "OK")
             		callback(new Callback("OK",data));
@@ -28,7 +50,8 @@ window.Readily = window.Readily || {};
 	function Connection() {
 		
 		this.login = function(login, password, callback) {
-			httpCall("POST", "/account/login", {login:login, password:password}, callback);
+			// httpCall("POST", "/account/login", {login:login, password:password}, callback);
+			httpCall("GET", "/account/login", {login:login, password:password}, callback);
 		};
 		
 		this.newaccount = function(login, password, birthyear, gender, callback) {
